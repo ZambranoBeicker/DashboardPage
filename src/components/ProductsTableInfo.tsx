@@ -1,6 +1,5 @@
 import * as React from "react";
-import { Checkbox, Flex, Button, Box, Text, Image } from "@chakra-ui/react";
-import Icon from "./Icon";
+import { Box, Text } from "@chakra-ui/react";
 
 export default function ProductsTable() {
   return (

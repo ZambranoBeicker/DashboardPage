@@ -1,7 +1,6 @@
 import * as React from "react";
 import { ResponsiveBar } from "@nivo/bar";
-import chakraTheme, { chartsTheme as theme } from "../../theme";
-import CustomLabel from "./CustomLabel";
+import  { chartsTheme as theme } from "../../theme";
 
 interface BarChartProps {
   data: any[];
@@ -26,12 +25,11 @@ export default function BarChart({ data, mt, mb }: BarChartProps) {
         legendPosition: "middle",
         legendOffset: -40,
       }}
-      barComponent={CustomTick}
-    />
+      barComponent={CustomBar}
   );
 }
 
-const CustomTick = ({ bar }: any) => {
+const CustomBar = ({ bar }: any) => {
   const borderRadius = 8;
   return (
     <g transform={`translate(${bar.x + bar.width / 2.175},${bar.y})`}>

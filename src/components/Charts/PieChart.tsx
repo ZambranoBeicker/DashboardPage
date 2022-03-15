@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ResponsivePie } from "@nivo/pie";
-import chakraTheme, { chartsTheme as theme } from "../../theme";
+import { chartsTheme as theme } from "../../theme";
 import CustomLabel from "./CustomLabel";
 
 interface PieChartProps {

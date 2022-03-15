@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Checkbox, Flex, Box, Text } from "@chakra-ui/react";
+import { Flex, Box, Text } from "@chakra-ui/react";
 import {
   pieChartData,
   lineChartData,

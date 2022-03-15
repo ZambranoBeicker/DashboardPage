@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Checkbox, Flex, Button, Box, Text, Image } from "@chakra-ui/react";
+import { Checkbox, Flex, Box, Text, Image } from "@chakra-ui/react";
 import ActionsButton from "./ActionsButton";
 import DetailsBox from "./DetailsBox";
 

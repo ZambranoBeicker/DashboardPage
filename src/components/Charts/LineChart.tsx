@@ -1,7 +1,6 @@
 import * as React from "react";
 import { ResponsiveLine } from "@nivo/line";
-import chakraTheme, { chartsTheme as theme } from "../../theme";
-import CustomLabel from "./CustomLabel";
+import { chartsTheme as theme } from "../../theme";
 
 interface BarChartProps {
   data: any[];
@@ -43,31 +42,3 @@ export default function BarChart({ data, mt, mb, ml, mr }: BarChartProps) {
     />
   );
 }
-
-const CustomTick = ({ bar }: any) => {
-  const borderRadius = 8;
-  return (
-    <g transform={`translate(${bar.x + bar.width / 2.175},${bar.y})`}>
-      <rect rx={borderRadius} width={10} height={bar.height} fill={bar.color} />
-      <rect
-        width={10}
-        height={bar.height / 2}
-        y={bar.height / 2}
-        fill={bar.color}
-      />
-      <text
-        x={50 / 1.5}
-        y={bar.height / 2 - 8}
-        textAnchor="end"
-        dominantBaseline="central"
-        fill="white"
-        style={{
-          fontWeight: 900,
-          fontSize: 15,
-        }}
-      >
-        {bar.data.value}
-      </text>
-    </g>
-  );
-};

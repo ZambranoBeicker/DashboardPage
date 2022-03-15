@@ -1,11 +1,5 @@
 import * as React from "react";
-import {
-  Tabs as ChakraTabs,
-  Tab,
-  TabPanels,
-  TabPanel,
-  TabList,
-} from "@chakra-ui/react";
+import { Tabs as ChakraTabs, Tab, TabList } from "@chakra-ui/react";
 
 interface TabsProps {
   valueList: string[];
