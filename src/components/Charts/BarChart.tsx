@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ResponsiveBar } from "@nivo/bar";
-import  { chartsTheme as theme } from "../../theme";
+import { chartsTheme as theme } from "../../theme";
 
 interface BarChartProps {
   data: any[];
@@ -26,6 +26,7 @@ export default function BarChart({ data, mt, mb }: BarChartProps) {
         legendOffset: -40,
       }}
       barComponent={CustomBar}
+    />
   );
 }
 
