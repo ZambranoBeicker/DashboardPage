@@ -37,7 +37,10 @@ export const App = () => (
         <Icon src="./icons/arrow-black.svg" alt="Arrow icon" />
       </Flex>
     </Flex>
-    <Flex justifyContent="space-between">
+    <Flex
+      justifyContent="space-between"
+      flexDir={{ base: "column", lg: "row" }}
+    >
       {[1, 2, 3].map((item) => {
         return (
           <React.Fragment key={item}>
@@ -62,7 +65,7 @@ export const App = () => (
       })}
     </Flex>
 
-    <Flex gap="4">
+    <Flex gap="4" flexDir={{ base: "column", lg: "row" }}>
       <Card width="68%" withoutPadding>
         <Box p="4" shadow="shadow">
           <Text fontSize="2xl" fontWeight="bold">
@@ -78,8 +81,10 @@ export const App = () => (
             justifyContent="space-between"
             py="4"
             shadow="shadow"
+            flexDir={{ base: "column", md: "row" }}
+            width="max-content"
           >
-            <Text>Facturación Neta</Text>
+            <Text width={{ base: "100%", md: "auto" }}>Facturación Neta</Text>
             <ChartsFilters
               filterNames={["Anual", "Mensual", "Semanal", "Diario"]}
             />
@@ -138,7 +143,7 @@ export const App = () => (
         </Card>
       </Box>
     </Flex>
-    <Flex gap="3">
+    <Flex gap="3" flexDir={{ base: "column", lg: "row" }}>
       <Card withoutPadding width="45%">
         <Flex
           p="6"

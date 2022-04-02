@@ -21,7 +21,7 @@ export default function Card({
         mb="4"
         p={withoutPadding ? "0" : "4"}
         shadow="5px 6px 15px #00000014"
-        width={width ? width : "auto"}
+        width={{ base: "100%", lg: width ? width : "auto" }}
         bgGradient="linear(to-r, #09BEE6, #1A2EAB)"
         color="#fff"
         overflow="hidden"
@@ -38,7 +38,7 @@ export default function Card({
       mb="4"
       p={withoutPadding ? "0" : "4"}
       shadow="5px 6px 15px #00000014"
-      width={width ? width : "auto"}
+      width={{ base: "100%", lg: width ? width : "auto" }}
       bg="#fff"
     >
       {children}

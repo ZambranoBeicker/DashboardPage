@@ -35,32 +35,41 @@ export default function ProductsSection() {
           </React.Fragment>
         ))}
       </Flex>
-      <Tabs
-        valueList={[
-          "Todos",
-          "Más vendidos",
-          "Bajo de inventario",
-          "Próximo a vencer",
-        ]}
-      >
-        <Box ml="auto" mt="-.5rem">
-          <IconButton
-            icon={<Icon src="./icons/download.svg" alt="Download icon" />}
+      <Box width="100%" overflow="auto" mt="4">
+        <Box width="max-content">
+          <Tabs
+            valueList={[
+              "Todos",
+              "Más vendidos",
+              "Bajo de inventario",
+              "Próximo a vencer",
+            ]}
           >
-            Descargar seleccionados
-          </IconButton>
+            <Box ml="auto" mb="2">
+              <IconButton
+                icon={<Icon src="./icons/download.svg" alt="Download icon" />}
+              >
+                Descargar seleccionados
+              </IconButton>
+            </Box>
+          </Tabs>
+          <Flex
+            my="4"
+            px="4"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Flex gap="2">
+              <Checkbox size="lg" />
+
+              <ActionsButton>Acciones</ActionsButton>
+            </Flex>
+
+            <ActionsButton>Ordenar</ActionsButton>
+          </Flex>
+          <ProductsTable />
         </Box>
-      </Tabs>
-      <Flex my="4" px="4" justifyContent="space-between" alignItems="center">
-        <Flex gap="2">
-          <Checkbox size="lg" />
-
-          <ActionsButton>Acciones</ActionsButton>
-        </Flex>
-
-        <ActionsButton>Ordenar</ActionsButton>
-      </Flex>
-      <ProductsTable />
+      </Box>
     </Card>
   );
 }
