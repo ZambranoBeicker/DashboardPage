@@ -16,6 +16,9 @@ import DetailsBox from "./components/DetailsBox";
 import ChartsFilters from "./components/ChartsFilters";
 import HighlightedInfo from "./components/HighlightedInfo";
 import ProductsSection from "./components/ProductsSection";
+import BlueSection from "./components/BlueSection";
+import ProductInventory from "./components/ProductInventory";
+import BuyersRanking from "./components/BuyersRanking";
 
 export const App = () => (
   <Box px="8" py="3" bg="bgPrimary" minHeight="100vh">
@@ -44,22 +47,7 @@ export const App = () => (
       {[1, 2, 3].map((item) => {
         return (
           <React.Fragment key={item}>
-            <Card width="32%">
-              <Text>N° de productos en inventario</Text>
-              <Flex
-                alignItems="center"
-                width="100%"
-                mt="2"
-                justifyContent="space-between"
-              >
-                <Text fontWeight="bold">1230</Text>
-                <IconButton
-                  icon={<Icon src="./icons/arrow-white.svg" alt="Arrow Icon" />}
-                >
-                  Ver detalles
-                </IconButton>
-              </Flex>
-            </Card>
+            <ProductInventory />
           </React.Fragment>
         );
       })}
@@ -96,7 +84,7 @@ export const App = () => (
       </Card>
 
       <Box minW="32%">
-        <Card bgGradient>
+        <BlueSection withDate buttonValue="Renovar">
           <Text fontSize="md" mb="4">
             Membresía
           </Text>
@@ -109,19 +97,8 @@ export const App = () => (
           <Text fontSize="sm" mb="4">
             fecha de expiración:
           </Text>
-          <Flex>
-            <Text mr="auto" fontWeight="bold" fontSize="xl" mb="4">
-              15 - 10 - 2020
-            </Text>
-            <IconButton
-              bgLight
-              icon={<Icon src="./icons/arrow-blue.svg" alt="arrow" />}
-            >
-              Renovar
-            </IconButton>
-          </Flex>
-        </Card>
-        <Card bgGradient>
+        </BlueSection>
+        <BlueSection buttonValue="Más información">
           <Text fontSize="md" mb="4">
             Traslados
           </Text>
@@ -131,67 +108,11 @@ export const App = () => (
           <Text fontWeight="bold" mr="auto" fontSize="xl" mb="4">
             San Isidro a Plaza Bolívar
           </Text>
-          <Box marginLeft="auto">
-            <IconButton
-              bgLight
-              icon={<Icon src="./icons/arrow-blue.svg" alt="arrow" />}
-              margin="0 0 0 auto"
-            >
-              Más información
-            </IconButton>
-          </Box>
-        </Card>
+        </BlueSection>
       </Box>
     </Flex>
     <Flex gap="3" flexDir={{ base: "column", lg: "row" }}>
-      <Card withoutPadding width="45%">
-        <Flex
-          p="6"
-          bgGradient="linear(to-r, gradient.from, gradient.to)"
-          color="white"
-          justifyContent="space-between"
-          alignItems="center"
-        >
-          <Text fontSize="lg">Ranking de compradores</Text>
-          <Box minWidth="8">
-            <Icon src="./icons/download.svg" alt="Download icon" />
-          </Box>
-        </Flex>
-        <Box
-          px="3"
-          mt="4"
-          maxH="400px"
-          overflow="auto"
-          className="custome-scrollbar"
-        >
-          {new Array(100).fill(undefined).map((i) => (
-            <React.Fragment key={i}>
-              <Flex
-                mt="2"
-                mb="4"
-                border="1px solid"
-                borderColor="border"
-                borderRadius="md"
-                py="3"
-              >
-                <DetailsBox withoutBorder styles={{ pr: "3rem" }}>
-                  <Text fontWeight="bold">Nombre</Text>
-                  <Text>Marcos Cliente</Text>
-                </DetailsBox>
-                <DetailsBox>
-                  <Text fontWeight="bold">Valor de vida</Text>
-                  <Text>Q. 15,256.33</Text>
-                </DetailsBox>
-                <DetailsBox
-                  styles={{ display: "flex", alignItems: "center", px: "6" }}
-                >
-                  <Icon src="./icons/arrow-blue.svg" alt="slkfndf" />
-                </DetailsBox>
-              </Flex>
-            </React.Fragment>
-          ))}
-        </Box>
-      </Card>
+      <BuyersRanking />
       <Card withoutPadding width="100%">
         <Flex px="4" justifyContent="space-between" py="4" shadow="shadow">
           <Text fontSize="2xl" fontWeight="bold">
